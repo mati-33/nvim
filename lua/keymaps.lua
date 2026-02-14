@@ -10,6 +10,13 @@ vim.keymap.set("n", "<leader>sn", "<cmd>noautocmd w <CR>", { desc = "save file w
 -- Delete single character without copying into register
 vim.keymap.set("n", "x", '"_x', { desc = "delete single character without copying into register" })
 
+-- Comment out a line and paste it
+vim.keymap.set("n", "yc", "yy<cmd>normal gcc<CR>p", { noremap = true, desc = "comment and paste line" })
+
+-- Easier _ and $
+vim.keymap.set({ "n", "v" }, "gh", "_", { noremap = true, desc = "go to start of line" })
+vim.keymap.set({ "n", "v" }, "gl", "$", { noremap = true, desc = "go to end of line" })
+
 -- Scroll with smaller jumps
 vim.keymap.set("n", "<C-d>", "10j", { desc = "scroll 10 lines down" })
 vim.keymap.set("n", "<C-u>", "10k", { desc = "scoll 10 lines up" })
