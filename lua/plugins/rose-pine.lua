@@ -14,7 +14,7 @@ return {
                     overlay = "#182022",
                     text = "#ffffff",
                     gold = "#f6c177",
-                    muted = "#6e6a86",
+                    muted = "#cecacd",
                     subtle = "#908caa",
                     highlight_low = "#21202e",
                     highlight_med = "#403d52",
