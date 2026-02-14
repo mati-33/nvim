@@ -16,7 +16,17 @@ return {
     config = function()
         require("telescope").setup({
             defaults = {
-                path_display = { "truncate" },
+                ---@diagnostic disable-next-line: unused-local
+                path_display = function(opts, path)
+                    local tail = require("telescope.utils").path_tail(path)
+                    path = string.format("%s  %s", tail, path)
+
+                    local highlights = {
+                        { { #tail, #path }, "Comment" },
+                    }
+
+                    return path, highlights
+                end,
                 layout_config = { prompt_position = "top" },
                 sorting_strategy = "ascending",
                 borderchars = { "", "", "", "", "", "", "", "" },
