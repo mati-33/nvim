@@ -11,6 +11,7 @@ return {
             end,
         },
         { "nvim-telescope/telescope-ui-select.nvim" },
+        { "nvim-telescope/telescope-live-grep-args.nvim" },
     },
     lazy = false,
     config = function()
@@ -45,8 +46,10 @@ return {
                 },
             },
         })
+
         require("telescope").load_extension("fzf")
         require("telescope").load_extension("ui-select")
+        require("telescope").load_extension("live_grep_args")
 
         local b = require("telescope.builtin")
 
@@ -54,7 +57,6 @@ return {
         vim.keymap.set("n", "<leader>sh", b.help_tags, { desc = "search help" })
         vim.keymap.set("n", "<leader>ss", b.builtin, { desc = "search telescope" })
         vim.keymap.set("n", "<leader>sw", b.grep_string, { desc = "search current word" })
-        vim.keymap.set("n", "<leader>sg", b.live_grep, { desc = "grep" })
         vim.keymap.set("n", "<leader>sr", b.resume, { desc = "last telescope picker" })
         vim.keymap.set("n", "<leader>sgs", b.git_status, { desc = "search git status" })
         vim.keymap.set("n", "<leader>sgb", b.git_branches, { desc = "search git branches" })
@@ -66,5 +68,8 @@ return {
                 prompt_title = "grep open files",
             })
         end, { desc = "active buffers" })
+        vim.keymap.set("n", "<leader>sg", function()
+            require("telescope").extensions.live_grep_args.live_grep_args()
+        end, { desc = "grep" })
     end,
 }
