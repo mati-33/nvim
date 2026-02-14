@@ -37,27 +37,24 @@ return {
         })
         require("telescope").load_extension("fzf")
         require("telescope").load_extension("ui-select")
+
+        local b = require("telescope.builtin")
+
+        vim.keymap.set("n", "<leader>sf", b.find_files, { desc = "search files" })
+        vim.keymap.set("n", "<leader>sh", b.help_tags, { desc = "search help" })
+        vim.keymap.set("n", "<leader>ss", b.builtin, { desc = "search telescope" })
+        vim.keymap.set("n", "<leader>sw", b.grep_string, { desc = "search current word" })
+        vim.keymap.set("n", "<leader>sg", b.live_grep, { desc = "grep" })
+        vim.keymap.set("n", "<leader>sr", b.resume, { desc = "last telescope picker" })
+        vim.keymap.set("n", "<leader>sgs", b.git_status, { desc = "search git status" })
+        vim.keymap.set("n", "<leader>sgb", b.git_branches, { desc = "search git branches" })
+        vim.keymap.set("n", "<leader>sgl", b.git_bcommits, { desc = "search git log" })
+        vim.keymap.set("n", "<leader><leader>", b.buffers, { desc = "active buffers" })
+        vim.keymap.set("n", "<leader>s/", function()
+            b.live_grep({
+                grep_open_files = true,
+                prompt_title = "grep open files",
+            })
+        end, { desc = "active buffers" })
     end,
-    keys = {
-        { "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "search files" },
-        { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "search help" },
-        { "<leader>ss", "<cmd>Telescope<cr>", desc = "search telescope" },
-        { "<leader>sw", "<cmd>Telescope grep_string<cr>", desc = "search current word" },
-        { "<leader>sg", "<cmd>Telescope live_grep<cr>", desc = "grep" },
-        { "<leader>sr", "<cmd>Telescope resume<cr>", desc = "last telescope picker" },
-        { "<leader><leader>", "<cmd>Telescope buffers<cr>", desc = "active buffers" },
-        { "<leader>sgs", "<cmd>Telescope git_status<cr>", desc = "search git status" },
-        { "<leader>sgb", "<cmd>Telescope git_branches<cr>", desc = "search git branches" },
-        { "<leader>sgl", "<cmd>Telescope git_bcommits<cr>", desc = "search git log" },
-        {
-            "<leader>s/",
-            function()
-                require("telescope.builtin").live_grep({
-                    grep_open_files = true,
-                    prompt_title = "grep open files",
-                })
-            end,
-            desc = "grep open files",
-        },
-    },
 }
