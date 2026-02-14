@@ -62,6 +62,12 @@ return {
         vim.keymap.set("n", "<leader>sgb", b.git_branches, { desc = "search git branches" })
         vim.keymap.set("n", "<leader>sgl", b.git_bcommits, { desc = "search git log" })
         vim.keymap.set("n", "<leader><leader>", b.buffers, { desc = "active buffers" })
+
+        vim.keymap.set("n", "gd", b.lsp_definitions, { desc = "go to definition" })
+        vim.keymap.set("n", "grr", b.lsp_references, { desc = "search references" })
+        vim.keymap.set("n", "gri", b.lsp_implementations, { desc = "search lsp_implementations" })
+        vim.keymap.set("n", "<leader>D", b.lsp_type_definitions, { desc = "go to type definition" })
+
         vim.keymap.set("n", "<leader>s/", function()
             b.live_grep({
                 grep_open_files = true,
@@ -71,5 +77,8 @@ return {
         vim.keymap.set("n", "<leader>sg", function()
             require("telescope").extensions.live_grep_args.live_grep_args()
         end, { desc = "grep" })
+        vim.keymap.set("n", "<leader>sp", function()
+            b.find_files({ cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy") })
+        end, { desc = "search neovim plugins" })
     end,
 }
