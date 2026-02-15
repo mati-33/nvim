@@ -11,7 +11,7 @@ return {
                     _nc = "#16141f",
                     base = "#141618",
                     surface = "#1c1c1c",
-                    overlay = "#182022",
+                    overlay = "#303234",
                     text = "#ffffff",
                     gold = "#f6c177",
                     muted = "#cecacd",
@@ -20,6 +20,9 @@ return {
                     highlight_med = "#403d52",
                     highlight_high = "#524f67",
                 },
+            },
+            highlight_groups = {
+                WinSeparator = { fg = "#303234" },
             },
         })
         vim.cmd("colorscheme rose-pine")
