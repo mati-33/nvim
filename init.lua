@@ -3,6 +3,7 @@ vim.g.maplocalleader = " "
 
 require("options")
 require("keymaps")
+require("autocommands")
 
 -- install lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
