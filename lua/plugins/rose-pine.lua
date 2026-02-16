@@ -23,6 +23,8 @@ return {
             },
             highlight_groups = {
                 WinSeparator = { fg = "#303234" },
+                TreesitterContext = { fg = "#ffffff", bg = "NONE" },
+                TreesitterContextBottom = { underline = true, sp = "#303234" },
             },
         })
         vim.cmd("colorscheme rose-pine")
