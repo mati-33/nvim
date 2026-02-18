@@ -52,6 +52,7 @@ return {
         require("telescope").load_extension("live_grep_args")
 
         local b = require("telescope.builtin")
+        local t = require("telescope.themes")
 
         vim.keymap.set("n", "<leader>sf", b.find_files, { desc = "search files" })
         vim.keymap.set("n", "<leader>sh", b.help_tags, { desc = "search help" })
@@ -74,11 +75,17 @@ return {
                 prompt_title = "grep open files",
             })
         end, { desc = "active buffers" })
+
         vim.keymap.set("n", "<leader>sg", function()
             require("telescope").extensions.live_grep_args.live_grep_args()
         end, { desc = "grep" })
+
         vim.keymap.set("n", "<leader>sp", function()
             b.find_files({ cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy") })
         end, { desc = "search neovim plugins" })
+
+        vim.keymap.set("n", "<leader>fs", function()
+            b.spell_suggest(t.get_cursor({ border = false }))
+        end, { desc = "fix spelling" })
     end,
 }
