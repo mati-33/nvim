@@ -43,3 +43,7 @@ vim.opt.formatoptions:remove({ "c", "r", "o" })
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")
 vim.opt.fillchars = { diff = " " }
 vim.o.laststatus = 3
+
+vim.diagnostic.config({ virtual_text = true })
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
