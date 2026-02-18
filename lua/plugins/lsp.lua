@@ -9,6 +9,10 @@ return {
             "lua_ls",
             "ty",
             "gopls",
+            "ts_ls",
+            "html",
+            "dockerls",
+            "yamlls",
         })
     end,
 }
