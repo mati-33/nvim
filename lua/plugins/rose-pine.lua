@@ -25,6 +25,8 @@ return {
                 WinSeparator = { fg = "#303234" },
                 TreesitterContext = { fg = "#ffffff", bg = "NONE" },
                 TreesitterContextBottom = { underline = true, sp = "#303234" },
+                MiniFilesBorder = { fg = "#1c1c1c" },
+                MiniFilesBorderModified = { fg = "foam" },
             },
         })
         vim.cmd("colorscheme rose-pine")
