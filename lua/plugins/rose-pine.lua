@@ -21,12 +21,21 @@ return {
                     highlight_high = "#524f67",
                 },
             },
+            styles = {
+                italic = false,
+            },
             highlight_groups = {
                 WinSeparator = { fg = "#303234" },
                 TreesitterContext = { fg = "#ffffff", bg = "NONE" },
                 TreesitterContextBottom = { underline = true, sp = "#303234" },
                 MiniFilesBorder = { fg = "#1c1c1c" },
                 MiniFilesBorderModified = { fg = "foam" },
+                BlinkCmpDoc = { bg = "#1c1c1c" },
+                BlinkCmpDocSeparator = { bg = "#1c1c1c" },
+                ["@keyword.operator"] = { fg = "pine" },
+                ["@constant.builtin.python"] = { fg = "foam", bold = true },
+                ["@lsp.type.parameter.python"] = { fg = "text" },
+                ["@lsp.type.property.python"] = { fg = "text" },
             },
         })
         vim.cmd("colorscheme rose-pine")
