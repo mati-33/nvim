@@ -45,6 +45,15 @@ return {
                     require("telescope.themes").get_cursor({ border = false }),
                 },
             },
+            pickers = {
+                buffers = {
+                    mappings = {
+                        i = {
+                            ["<C-r>"] = require("telescope.actions").delete_buffer,
+                        },
+                    },
+                },
+            },
         })
 
         require("telescope").load_extension("fzf")
