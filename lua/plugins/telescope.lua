@@ -20,7 +20,7 @@ return {
                 ---@diagnostic disable-next-line: unused-local
                 path_display = function(opts, path)
                     local tail = require("telescope.utils").path_tail(path)
-                    path = string.format("%s  %s", tail, path)
+                    path = string.format("%s  %s", tail, vim.fn.fnamemodify(path, ":."))
 
                     local highlights = {
                         { { #tail, #path }, "Comment" },
