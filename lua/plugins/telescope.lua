@@ -71,7 +71,9 @@ return {
         vim.keymap.set("n", "<leader>sgs", b.git_status, { desc = "search git status" })
         vim.keymap.set("n", "<leader>sgb", b.git_branches, { desc = "search git branches" })
         vim.keymap.set("n", "<leader>sgl", b.git_bcommits, { desc = "search git log" })
-        vim.keymap.set("n", "<leader><leader>", b.buffers, { desc = "active buffers" })
+        vim.keymap.set("n", "<leader><leader>", function()
+            b.buffers(t.get_dropdown({ border = false, preview = false }))
+        end, { desc = "active buffers" })
 
         vim.keymap.set("n", "gd", b.lsp_definitions, { desc = "go to definition" })
         vim.keymap.set("n", "grr", b.lsp_references, { desc = "search references" })
