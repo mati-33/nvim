@@ -11,6 +11,7 @@ return {
                 "lua-language-server",
                 "ty",
                 "gopls",
+                "golangci-lint-langserver",
                 "typescript-language-server",
                 "html-lsp",
                 "yaml-language-server",

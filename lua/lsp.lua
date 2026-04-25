@@ -2,6 +2,7 @@ vim.lsp.enable({
     "lua_ls",
     "ty",
     "gopls",
+    "golangci_lint_ls",
     "ts_ls",
     "html",
     "dockerls",
