@@ -12,6 +12,7 @@ return {
                 "ty",
                 "gopls",
                 "golangci-lint-langserver",
+                "golangci-lint",
                 "typescript-language-server",
                 "html-lsp",
                 "yaml-language-server",
